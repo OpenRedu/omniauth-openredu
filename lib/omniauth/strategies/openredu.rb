@@ -2,7 +2,7 @@ require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
-    class Redu < OmniAuth::Strategies::OAuth2
+    class Openredu < OmniAuth::Strategies::OAuth2
       # Give your strategy a name.
       option :openredu, "openredu"
 

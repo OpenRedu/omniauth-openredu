@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class OmniauthReduTest < ActiveSupport::TestCase
+class OmniauthOpenreduTest < ActiveSupport::TestCase
   test "truth" do
-    assert_kind_of Module, OmniauthRedu
+    assert_kind_of Module, OmniauthOpenredu
   end
 end

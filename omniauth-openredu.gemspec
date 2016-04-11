@@ -6,7 +6,7 @@ require "omniauth-openredu/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "omniauth-openredu"
-  s.version     = OmniauthRedu::VERSION
+  s.version     = OmniauthOpenredu::VERSION
   s.authors     = ["Guilherme Cavalcanti"]
   s.email       = ["guiocavalcanti@gmail.com"]
   s.homepage    = "http://developers.redu.com.br"
