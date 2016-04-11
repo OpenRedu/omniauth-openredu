@@ -4,11 +4,11 @@ module OmniAuth
   module Strategies
     class Redu < OmniAuth::Strategies::OAuth2
       # Give your strategy a name.
-      option :redu, "redu"
+      option :openredu, "openredu"
 
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
-      option :client_options, {:site => "http://www.redu.com.br"}
+      option :client_options, {:site => "http://www.openredu.com"}
 
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
