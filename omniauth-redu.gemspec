@@ -1,11 +1,11 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "omniauth-redu/version"
+require "omniauth-openredu/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "omniauth-redu"
+  s.name        = "omniauth-openredu"
   s.version     = OmniauthRedu::VERSION
   s.authors     = ["Guilherme Cavalcanti"]
   s.email       = ["guiocavalcanti@gmail.com"]

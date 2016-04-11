@@ -10,7 +10,7 @@ require "rails/test_unit/railtie"
 
 Bundler.require
 require "omniauth"
-require "omniauth-redu"
+require "omniauth-openredu"
 
 module Dummy
   class Application < Rails::Application
