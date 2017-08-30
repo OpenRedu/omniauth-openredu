@@ -12,10 +12,11 @@ Implementação de estratégia de autenticação do OAuth 2.0 para Ruby.
 
 ### Dependências
 
-Adicione a seguinte dependência no seu Gemfile:
+Adicione as seguintes dependências no seu Gemfile:
 
 ```ruby
 gem 'omniauth-openredu', :git => 'https://github.com/Openredu/omniauth-openredu.git'
+gem 'omniauth-oauth2', '~> 1.3.1' 
 ```
 
 Execute o comando ``bundle install`` para baixar e instalar a dependência.
@@ -37,8 +38,8 @@ end
 Neste exemplo é assumido que há um controller com o nome ``SessionsController`` que possui um action ``create``.
 
 ```ruby
-  match '/auth/:provider/callback', :to => 'sessions#create'
-  match '/auth/:provider', :to => 'sessions#create', as: :create_session
+  get '/auth/:provider/callback', :to => 'sessions#create'
+  get '/auth/:provider', :to => 'sessions#create', as: :create_session
 ```
 
 ### Controller
@@ -91,7 +92,6 @@ Uma imaplentação do método ``User.create_with_omniauth!`` pode ser vista abai
 
 ```ruby
 class User < ActiveRecord::Base
-  attr_accessible :email, :login, :name, :token, :uid
 
   def self.create_with_omniauth(auth)
     create! do |user|
