@@ -15,18 +15,18 @@ Implementação de estratégia de autenticação do OAuth 2.0 para Ruby.
 Adicione a seguinte dependência no seu Gemfile:
 
 ```ruby
-gem 'omniauth-redu'
+gem 'omniauth-openredu', :git => 'https://github.com/Openredu/omniauth-openredu.git'
 ```
 
 Execute o comando ``bundle install`` para baixar e instalar a dependência.
 
 ### Tokens
 
-[Registre sua aplicação](http://redu.com.br/aplicativos/criar) no Redu e crie um initializer declarando o ``consumer_id`` e ``consumer_scret``:
+[Registre sua aplicação](https://openredu.ufpe.br/aplicativos/criar) no Redu e crie um initializer declarando o ``consumer_id`` e ``consumer_scret``:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :redu,  "consumer_id", "consumer_secret"
+  provider :openredu,  "consumer_id", "consumer_secret"
 end
 ```
 
@@ -43,7 +43,7 @@ Neste exemplo é assumido que há um controller com o nome ``SessionsController`
 
 ### Controller
 
-Sempre que uma requisição for feita para a URL ``/auth/redu`` é dado início ao ciclo de autorização. Ao fim do ciclo, o navegador do usuário é redirecionado para ``/auth/redu/callback`` junto com o ``access_token`` do mesmo. O ``access_token`` deve ser persistido por sua aplicação e utilizado nas requisições subsequentes para pegar mais informações do usuário.
+Sempre que uma requisição for feita para a URL ``/auth/openredu`` é dado início ao ciclo de autorização. Ao fim do ciclo, o navegador do usuário é redirecionado para ``/auth/openredu/callback`` junto com o ``access_token`` do mesmo. O ``access_token`` deve ser persistido por sua aplicação e utilizado nas requisições subsequentes para pegar mais informações do usuário.
 
 Um exemplo de ``SessionsController`` mais simples possível pode ser visto abaixo:
 
@@ -73,11 +73,11 @@ class SessionsController < BaseController
 end
 ```
 
-O formado do hash disponível através de ``request.env['omniauth.redu']`` é o seguinte:
+O formado do hash disponível através de ``request.env['omniauth.openredu']`` é o seguinte:
 
 ```ruby
 {
-  "uid" => 1212, # ID do usuário no Redu,
+  "uid" => 1212, # ID do usuário no Openredu,
   "info" => {
     "name" => "Guilherme",
     "login" => "guiocavalcanti",
