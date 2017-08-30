@@ -3,7 +3,7 @@ PATH
   specs:
     omniauth-redu (0.0.1)
       omniauth-oauth2
-      rails (~> 3.2.2)
+      rails (>= 3.2.2)
 
 GEM
   remote: http://rubygems.org/
